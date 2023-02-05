@@ -1,1 +1,2 @@
-# BookMediaRolling
+# Rosinski Coaching Website
+## rolling edition.
