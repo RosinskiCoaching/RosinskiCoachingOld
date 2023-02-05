@@ -157,7 +157,8 @@ header {
 }
 
 .header {
-	border-left: solid black 2px;
+	border-right: solid black 2px;
+	text-align: right;
 }
 
 .header::first-letter {
@@ -174,6 +175,6 @@ header {
 	color: #262335;
 }
 
-.loesung .du {
+.loesung, .du {
 	color: #282922;
 }
