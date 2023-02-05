@@ -1,4 +1,9 @@
 /* pre-loader */
+
+body {
+	background: floralwhite;
+}
+
 .loader {
 	position: fixed;
 	z-index: 100000;
