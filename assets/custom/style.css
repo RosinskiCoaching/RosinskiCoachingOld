@@ -151,7 +151,7 @@ header {
 }
 
 .header_image {
-	min-width: 1000px;
+	/* min-width: 1000px; */
 
 	border-radius: 40% 10%;
 }
