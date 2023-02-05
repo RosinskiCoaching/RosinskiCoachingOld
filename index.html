@@ -13,7 +13,7 @@
 	<!-- fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Open+Sans:wght@300&family=Lobster&family=Poppins&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Open+Sans:wght@300&family=Lobster&family=Poppins:wght@300&display=swap" rel="stylesheet">
 
 	<!-- bootstrap -->
 	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
@@ -22,7 +22,18 @@
 	<link rel="stylesheet" href="assets/custom/style.css" type="text/css">
 	
 	<!-- js -->
-	<script src="assets/custom/app.js" type="text/javascript"></script>
+	<script>
+		window.addEventListener("load", () => {
+
+			const loader = document.querySelector(".loader");
+
+			loader.classList.add("loader--hidden");
+
+			loader.addEventListener("transitioned", () => {
+				document.body.removeChild(loader);
+			})
+		})
+	</script>
 	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -46,32 +57,29 @@
 		</div>
 	</div>
 
-	<header class="container-fluid py-5 row">
-		<img class="header_image col" src="assets/images/header.png" alt="there was a error with your connection. Please reload the page.">
-		<h1 class="display-1 sans py-5 pe-5 ms-5 ps-3 col header">Nicht du bist das Problem. Das Problem ist das Problem. Du bist die Lösung.</h1>
+	<header class="container-fluid row py-5">
+		<img class="col header_image" src="assets/images/header.png" alt="there was a error with your connection. Please reload the page.">
+		<h1 class="col display-1 sans py-5 pe-5 ms-5 ps-3 header">Nicht <span class="keyword du">du</span> bist das <span class="keyword problem">Problem</span>. Das <span class="keyword problem">Problem</span> ist das <span class="keyword problem">Problem</span>. Du bist die <strong class="keyword loesung">Lösung</strong>.</h1>
 	</header>
 
 	<div class="bio">
-		Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit illo libero quos, commodi obcaecati, numquam culpa natus quibusdam delectus, laborum odio dolore exercitationem a, iure deserunt amet officiis. Odit qui consectetur, voluptates saepe velit et fugit maxime cupiditate, esse quo sed animi repellat, earum deleniti eligendi sint quasi at explicabo, ipsa illum sunt. Nostrum, doloribus beatae libero ipsa, aperiam saepe magnam. Tempore cum quae doloribus debitis veniam minima! Illo assumenda maiores repellendus nemo dolores necessitatibus! Quidem ea recusandae omnis sed eligendi voluptatem ipsum debitis sequi odit quo suscipit dicta molestias commodi molestiae officiis tempora porro quod, ipsam, officia earum consectetur saepe eaque. Assumenda doloremque delectus accusantium illo dolor iusto ea in ipsum dicta debitis ipsa, molestiae aspernatur nobis, minus maxime eos odit necessitatibus corrupti illum. Dolor magnam dolorum ratione, distinctio unde libero, similique dicta eligendi architecto. Laudantium facere beatae saepe harum animi in maiores dolor impedit ducimus repudiandae dicta quam quod quia, at! Illum neque, expedita rem suscipit voluptate quod, at fugiat ipsa aspernatur eum in accusamus veritatis doloremque. Cupiditate porro in, unde maxime, at quisquam libero recusandae ullam est facilis laboriosam veritatis. At ratione, quam nulla rerum quibusdam. Voluptatum, impedit delectus, voluptas facilis laudantium nostrum ad cum velit fugiat natus tenetur placeat vitae quia amet? Minus vero ad at, totam repellat quibusdam ratione explicabo dolor itaque, velit qui sed quaerat vel tenetur praesentium, nisi. Corporis animi rem asperiores molestiae et placeat laudantium unde, dignissimos quia reprehenderit, laborum accusamus repudiandae quisquam illo ut, beatae dolores quaerat tenetur maiores esse velit voluptate debitis consequatur sit quidem? Dolores aperiam magnam tempora sed, mollitia ducimus architecto ipsum eaque earum asperiores tempore, modi, saepe aut esse praesentium quo est rerum fuga iste ratione atque unde perferendis similique. Expedita obcaecati incidunt corrupti rem optio vitae eveniet debitis fuga eius ut, iste, odio atque consequatur fugiat labore temporibus earum quidem. Voluptate maiores reiciendis est, non quidem perspiciatis pariatur quae exercitationem et excepturi mollitia magni vitae, magnam velit aperiam, atque doloribus totam in cumque nobis aspernatur iure? Veniam beatae repellendus error quam, sint facilis inventore, et accusamus optio nulla recusandae at ea. Error amet ratione sed voluptates labore est, aut in exercitationem unde. Obcaecati nemo at non cupiditate perspiciatis autem quisquam maiores, nesciunt delectus officia. Soluta omnis perferendis modi debitis odit nobis odio rem, nostrum, consequatur beatae, pariatur excepturi maxime neque delectus, ullam eos magni dolor. Quo, possimus, nemo. Reiciendis, amet, nisi vitae eum enim nemo porro ad neque ut iste similique est debitis, ullam accusamus in? Dolorem, itaque voluptas, quos voluptate excepturi rerum obcaecati amet repudiandae nam sunt rem ad neque atque accusamus commodi distinctio! Consequuntur, officia! Rerum, aperiam. Porro voluptatibus cum animi odio nesciunt sint. Facere incidunt sequi reprehenderit veniam quo quaerat velit obcaecati. Quibusdam, ut reprehenderit asperiores, obcaecati neque rerum molestiae praesentium doloribus illum repudiandae placeat, voluptatibus id veritatis nulla, accusamus esse! Cum maxime voluptatem nisi cupiditate tenetur, accusamus saepe perspiciatis quasi necessitatibus error porro natus assumenda commodi non aliquid facilis aspernatur est ab temporibus impedit veritatis eaque eum earum. Ullam, placeat deleniti, nesciunt, porro neque officia quas non voluptatum aliquid incidunt, possimus quae. Corrupti, voluptates magni autem optio temporibus, est consectetur, non reiciendis suscipit ut inventore sint accusamus ipsa natus minima eius saepe cum sit vitae? Soluta magni corrupti quas autem, cumque ut numquam. Qui quidem aspernatur assumenda, cupiditate, libero provident impedit debitis. Rem architecto, at modi voluptatem inventore eligendi omnis. Impedit explicabo possimus perspiciatis nihil, dolores, laudantium. Molestias deserunt cumque, at doloremque nostrum! Tempora, assumenda distinctio eligendi est porro autem molestias sapiente deleniti magni! Quae aliquam minus at nihil magnam officiis architecto, dicta sunt ipsam eveniet ullam eligendi inventore, earum mollitia consectetur, totam? Omnis accusamus, quasi adipisci fugiat voluptates, minima quidem illum sit suscipit inventore sed nostrum minus laboriosam aliquid architecto. Hic officiis ipsum quibusdam incidunt expedita nihil sequi ex reprehenderit repudiandae reiciendis consequatur architecto asperiores quisquam perferendis ad necessitatibus ut maxime alias, mollitia consequuntur quasi libero cum, facilis. Atque dolore, obcaecati omnis voluptatibus repudiandae in, quae dolorem hic est qui eaque sequi quos minus tempora? Voluptatum ut ipsam officia, natus odit voluptates eligendi placeat! Necessitatibus dolores, suscipit aut exercitationem saepe animi eligendi, natus quisquam quod quidem, alias impedit qui, fugit odit nesciunt beatae perferendis hic! Nostrum, maxime inventore ea, praesentium cum dolorum, eum tempore quod aliquid error optio incidunt numquam iusto at beatae laudantium facilis tenetur magni quo! Architecto iure ullam ipsa, aliquam commodi veritatis mollitia natus, sapiente a modi eligendi labore! Adipisci corrupti iste fugiat exercitationem suscipit. Sed atque corporis numquam sit fugiat! Sunt amet vel perspiciatis libero ducimus magnam voluptatum deleniti mollitia temporibus provident modi, molestias sint, dicta accusamus, minima. Minima quod temporibus, vero fuga labore, rem impedit aliquam quis ut aliquid veritatis, laboriosam repudiandae expedita. Saepe nesciunt eligendi cumque delectus alias architecto quo provident ad id dolorum obcaecati officiis, blanditiis reprehenderit, quod quam, omnis facere at aperiam error. Maxime, fugiat fuga, porro tenetur quis fugit dolor inventore modi earum quisquam eveniet accusantium obcaecati rem? Inventore dolorum tempore perferendis adipisci mollitia voluptas velit, dolorem quidem assumenda! Nesciunt cumque animi aperiam beatae nihil odio error fugit quasi sunt velit consequatur cum illo tempora nobis quae eligendi, hic, repudiandae nulla adipisci ipsam explicabo, officiis minus facilis. Corrupti rem, officia. Earum sed, autem, alias repellat facere quibusdam eveniet, quis doloremque totam praesentium aut et ea soluta esse nemo quia. Sit eaque sunt quas voluptates aspernatur nisi id aliquid, error quam earum odio nemo vel modi, iure aperiam temporibus velit assumenda exercitationem debitis sapiente doloribus nihil architecto porro vitae? In quo sequi qui et accusamus nemo optio similique quasi, iusto nihil corrupti fugiat at, voluptatum quos ipsam? Velit, recusandae amet nostrum placeat asperiores voluptatem impedit eaque earum hic deleniti, omnis dignissimos ducimus ab corrupti veritatis voluptas neque possimus odio dolor modi expedita quis laboriosam. Molestiae voluptatem facere qui doloribus quis dolorem reiciendis iure, animi maiores corrupti consequatur adipisci rem cupiditate aut nostrum quidem sint veniam dolore non debitis nihil, veritatis hic facilis fugit! Modi optio magni nesciunt rerum libero eaque in ipsum. Accusamus mollitia, harum ratione similique saepe amet quam expedita non.
 	</div>
 
 	<script>
-		{
-			const nav = document.querySelector(".nav");
-			let lastScrollY = window.scrollY;
+		const nav = document.querySelector(".nav");
+		let lastScrollY = window.scrollY;
 
-			window.addEventListener("scroll", () => {
+		window.addEventListener("scroll", () => {
 
-				if (lastScrollY < window.scrollY) {
-					nav.classList.add("nav--hidden");
-					// nav.classList.remove("sticky-top")
-				} else {
-					nav.classList.remove("nav--hidden");
-				}
+			if (lastScrollY < window.scrollY) {
+				nav.classList.add("nav--hidden");
+				// nav.classList.remove("sticky-top")
+			} else {
+				nav.classList.remove("nav--hidden");
+			}
 
-				lastScrollY = window.scrollY;
-			});
-		}
+			lastScrollY = window.scrollY;
+		});
 	</script>
 
 </body>

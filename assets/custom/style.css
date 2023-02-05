@@ -125,11 +125,22 @@ header {
 }
 .header_image {
 	border-radius: 40% 10%;
+	min-width: ;
 }
 .header {
-	border-left: solid black;
+	border-left: solid black 2px;
 }
 .header::first-letter {
-	font-family: "Poppins", sans-serif;
+	font-family: "Poppins", "Open Sans", sans-serif;
+	font-style: bold;
 	font-size: 1.3em;
+}
+.keyword {
+	font-family: "Poppins", "Open Sans", sans-serif;
+}
+.problem {
+	color: #262335;
+}
+.loesung .du {
+	color: #282922;
 }
