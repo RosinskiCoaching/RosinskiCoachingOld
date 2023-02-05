@@ -15,33 +15,37 @@ body {
 	width: 100vw;
 	height: 100vh;
 
-	transition: opacity 0.75s, visibility 0.75s;
+	transition: opacity .75s, visibility 2s;
 
-	background: #333;
+	background: floralwhite;
 
 	align-items: center;
 	justify-content: center;
 }
+
 .loader--hidden {
 	visibility: hidden;
 
 	opacity: 0;
 }
+
 .loader::after {
-	width: 5rem;
-	height: 5rem;
+	width: 7rem;
+	height: 7rem;
 
 	content: "";
-	animation: loading 2s ease infinite;
+	animation: loading 1.5s ease infinite;
 
-	border: 1rem solid #ddd;
-	border-top-color: #009578;
+	border: .5rem solid #333;
+	border-top-color: floralwhite;
 	border-radius: 50%;
 }
+
 @keyframes loading {
-	0% {
+	from {
 		transform: rotate(0deg);
 	}
+	/*
 	20% {
 		transform: rotate(90deg);
 	}
@@ -54,7 +58,8 @@ body {
 	80% {
 		transform: rotate(180deg);
 	}
-	100% {
+	*/
+	to {
 		transform: rotate(1turn);
 	}
 }
@@ -63,58 +68,79 @@ body {
 .serif {
 	font-family: "EB Garamond", serif;
 }
+
 .sans {
 	font-family: "Open Sans", sans-serif;
 }
+
 .display {
 	font-family: "Lobster", serif;
 }
+
 .other {
 	font-family: "Poppins", "Open Sans" sans;
 }
 
 /* navbar */
 .nav {
-	background: floralwhite;
+	transition: opacity 1s, transform .5s;
+
 	border-bottom: solid grey 1px;
-	transition: opacity 1s, transform 0.5s;
+	background: floralwhite;
 }
+
 .nav--hidden {
 	transform: translateY(-80px);
+
 	opacity: 0;
 }
+
 .nav_item {
+	font-size: 1rem;
+
 	text-decoration: none;
 	text-transform: uppercase;
-	color: #36454F;
-	font-size: 1rem;
+
+	color: #36454f;
 }
+
 .nav_item:hover {
 	color: navy;
 }
+
 .nav_item::after {
-	content: "";
 	display: block;
+
 	width: 0;
 	height: 2px;
+
+	content: "";
+	transition: width 1s ease;
+
 	background: #dadada;
-	transition: width 1s ease;	
 }
+
 .nav_item:hover::after {
 	width: 100%;
-	transition: width 0.2s ease;
+
+	transition: width .2s ease;
 }
+
 .logo {
-	height: 3rem;
 	width: 3rem;
+	height: 3rem;
+
 	border-radius: 30%;
 }
+
 .name {
 	font-size: 1.3rem;
 }
+
 .link1 {
-	color: #494F55;
+	color: #494f55;
 }
+
 .link1:hover {
 	color: navy;
 }
@@ -123,24 +149,31 @@ body {
 header {
 	background: floralwhite;
 }
+
 .header_image {
+	min-width: 1000px;
+
 	border-radius: 40% 10%;
-	min-width: ;
 }
+
 .header {
 	border-left: solid black 2px;
 }
+
 .header::first-letter {
 	font-family: "Poppins", "Open Sans", sans-serif;
-	font-style: bold;
 	font-size: 1.3em;
+	font-style: bold;
 }
+
 .keyword {
 	font-family: "Poppins", "Open Sans", sans-serif;
 }
+
 .problem {
 	color: #262335;
 }
+
 .loesung .du {
 	color: #282922;
 }
