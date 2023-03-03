@@ -4,6 +4,18 @@
 	--main-font: "Poppins", sans-serif;
 }
 
+/* open-sans-light */
+@font-face {
+	font-family: "Open Sans";
+	font-style: normal;
+	font-weight: 300;
+	src: local("Open Sans Light"), local("OpenSans-Light"), url(assets/fonts/open-sans/open-sans-light.woff2) format("woff2");
+}
+
+@import url("assets/fonts/eb-garamond/eb-garamond.css");
+@import url("assets/fonts/open-sans/open-sans.css");
+@import url("assets/fonts/poppins/poppins.css");
+
 body {
 	background: floralwhite;
 }
@@ -69,9 +81,11 @@ body {
 /* navbar */
 .nav {
 	transition: visibility 3s, transform .5s;
+	width: 100vw;
 	border-bottom: solid grey 1px;
 	background: floralwhite;
-	position: fixed;
+	position: sticky;
+	margin-bottom: 5rem;
 }
 
 .nav--hidden {
@@ -117,34 +131,24 @@ body {
 
 /* header */
 header {
-	background: floralwhite;
+	display: grid;
+	grid-template-rows: 700px;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1rem;
+	grid-template-areas: "img text";
 }
 
 .header_image {
 	/* min-width: 1000px; */
-
+	margin-left: 2rem;
+	height: 400px;
 	border-radius: 40% 10%;
+	grid-area: img;
 }
 
 .header {
 	border-right: solid black 2px;
 	text-align: right;
-}
-
-.header::first-letter {
-	font-family: "Poppins", "Open Sans", sans-serif;
-	font-size: 1.3em;
-	font-style: bold;
-}
-
-.keyword {
-	font-family: "Poppins", "Open Sans", sans-serif;
-}
-
-.problem {
-	color: #262335;
-}
-
-.loesung, .du {
-	color: #282922;
+	grid-area: text;
+	font-family: "Open Sans", serif;
 }
