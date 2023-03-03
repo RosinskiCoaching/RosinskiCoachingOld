@@ -1,0 +1,8 @@
+/* eb-garamond-regular */
+@font-face {
+	font-family: "EB Garamond";
+	font-style: normal;
+	font-weight: 400;
+	src: local("EB Garamond Regular"), local("EBGaramond-Regular"), url(eb-garamond-regular.woff2) format("woff2");
+}
+

@@ -1,0 +1,151 @@
+:root {
+	--serif-font: "EB Garamond", serif;
+	--sans-font: "Open Sans", sans-serif;
+	--main-font: "Poppins", sans-serif;
+}
+
+body {
+	background: floralwhite;
+}
+
+/* pre-loader */
+.loader {
+	position: fixed;
+	z-index: 100000;
+	right: 0;
+	left: 0;
+
+	display: flex;
+
+	width: 100vw;
+	height: 100vh;
+
+	transition: opacity .75s linear, visibility 2s linear;
+
+	background: floralwhite;
+
+	align-items: center;
+	justify-content: center;
+}
+
+.loader--hidden {
+	visibility: hidden;
+
+	opacity: 0;
+}
+
+.loader::after {
+	width: 7rem;
+	height: 7rem;
+
+	content: "";
+	animation: loading 1.5s ease infinite;
+
+	border: .5rem solid #333;
+	border-top-color: floralwhite;
+	border-radius: 50%;
+}
+
+@keyframes loading {
+	0% {
+		transform: rotate(0deg);
+		padding: 0rem;
+		border-width: 0.5rem;
+	}
+	20% {
+		transform: rotate(-45deg);
+	}
+	60% {
+		border-width: 0.2rem;
+		padding: 4rem;
+	}
+	100% {
+		transform: rotate(1turn);
+		padding: 0rem;
+		border-width: 0.5rem;
+	}
+}
+
+/* navbar */
+.nav {
+	transition: opacity 1s, transform .5s;
+
+	border-bottom: solid grey 1px;
+	background: floralwhite;
+	position: fixed;
+}
+
+.nav--hidden {
+	transform: translateY(-80px);
+
+	opacity: 0;
+}
+
+.nav-block1 {
+	font-size: 1rem;
+
+	text-decoration: none;
+	text-transform: uppercase;
+
+	color: #36454f;
+}
+
+.nav-block2 {}
+
+.nav-block3 {}
+
+.logo {
+	width: 3rem;
+	height: 3rem;
+
+	border-radius: 30%;
+}
+
+.list1 {
+	font-size: 1.3rem;
+}
+
+.list1 {
+	color: #494f55;
+	transition: all 0.75s;
+}
+
+.list1:hover {
+	color: navy;
+}
+
+/* nav end */
+
+/* header */
+header {
+	background: floralwhite;
+}
+
+.header_image {
+	/* min-width: 1000px; */
+
+	border-radius: 40% 10%;
+}
+
+.header {
+	border-right: solid black 2px;
+	text-align: right;
+}
+
+.header::first-letter {
+	font-family: "Poppins", "Open Sans", sans-serif;
+	font-size: 1.3em;
+	font-style: bold;
+}
+
+.keyword {
+	font-family: "Poppins", "Open Sans", sans-serif;
+}
+
+.problem {
+	color: #262335;
+}
+
+.loesung, .du {
+	color: #282922;
+}
