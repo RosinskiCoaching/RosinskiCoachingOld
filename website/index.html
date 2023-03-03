@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Stefan Rosinski</title>
+
+	<!-- prefetch & load -->
+	<link rel="preload" as="image" href="assets/images/header.png">
+	<link rel="prefetch" as="image" href="assets/images/fav2.png">
+	<link rel="prefetch" as="font" href="assets/fonts/poppins/poppins-light.woff2">
+	<link rel="prefetch" as="font" href="assets/fonts/open-sans/open-sans-light.woff2">
+	<link rel="prefetch" as="font" href="assets/fonts/eb-garamond/eb-garamond-regular.woff2">
+
+	<!-- Meta tags -->
+	<meta name="social" content="https://www.linkedin.com/in/stefan-rosinski-71ba97a3/">
+	<meta name="author" content="Stefan Rosinski, Laurens Rosinski">
+	<meta name="google" value="translate">
+	<meta name="application-name" content="Rosinski Coaching">
+	<meta name="description" content="Coaching für Menschen—Coaching für Kommunikation. Agiles Coaching für Business, Person, und Paar.">
+	<meta name="robots" content="index,follow,noodp">
+	<meta name="googlebot" content="index,follow">
+	<meta name="google" content="nositelinkssearchbox">
+	<meta name="subject" content="Stefan Rosinski's Coaching">
+	<meta name="abstract" content="Weniger stress über 'Goals'.">
+	<meta name="topic" content="Coaching">
+	<meta name="summary" content="Kommunikation">
+	<meta name="url" content="https://www.rosinskicoaching.de/index.html">
+	<meta name="directory" content="submission">
+	<meta name="category" content="Life Coaching">
+	<meta name="coverage" content="Worldwide">
+	<meta name="distribution" content="Global">
+	<meta name="rating" content="General">
+	<meta name="referrer" content="never">
+	<meta name="format-detection" content="telephone=no">
+
+	<!-- favicon -->
+	<link rel="shortcut icon" href="assets/favicon/fav2.png" type="image/png">
+
+	<!-- fonts -->
+	<link href="assets/fonts/poppins/poppins.css" rel="stylesheet">
+	<link href="/assets/fonts/open-sans/open-sans.css" rel="stylesheet">
+	<link href="assets/fonts/eb-garamond/eb-garamond.css" rel="stylesheet">
+
+	<!-- bootstrap -->
+	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" type="text/css">
+
+	<!-- links -->
+	<link rel="stylesheet" href="styles/style.css" type="text/css">
+	<link rel="stylesheet" href="styles/style2.css" type="text/css">
+	<link rel="canonical" href="https://dev.rosinskicoaching.de/">
+	<link rel="me" href="mailto:stefan@rosinskicoaching.de">
+	<link rel="index" href="https://dev.rosinskicoaching.de/" title="Stefan Rosinski Coaching">
+	<link rel="start" href="https://dev.rosinskicoaching.de/" title="Rosinski Coaching">
+
+	<!-- js -->
+	<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+
+	<script>
+		window.addEventListener("load", () => {
+			const loader = document.querySelector(".loader");
+
+			loader.classList.add("loader--hidden");
+
+			loader.addEventListener("transitioned", () => {
+				document.body.removeChild(loader);
+			})
+		})
+	</script>
+
+	<!-- pre-loader -->
+	<div class="loader"></div>
+
+	<nav class="nav">
+		<div class="nav-block1">
+			<img class="logo" src="assets/images/logo.png" alt="LOGO">
+			<a class="link1" href="https://www.rosinskicoaching.de/">Stefan Rosinski</a>
+		</div>
+		<div class="nav-block2">
+			Coaching für Kommunikation
+		</div>
+		<div class="nav-block3">
+			<a href="contact.html" class="list1">kontakt</a>
+			<a href="workshops.html" class="list2">workshops</a>
+			<a href="blog.html" class="list3">blog</a>
+		</div>
+	</nav>
+
+	<header>
+		<img class="header_image" src="assets/images/header.png" alt="there was a error with your connection. Please reload the page.">
+		<h1 class="header">Nicht du bist das Problem. Das Problem ist das Problem. Du bist die Lösung.</h1>
+	</header>
+
+	<div class="bio">
+	</div>
+
+	<script>
+		let lastScrollY = window.scrollY;
+		const topbar = document.querySelector(".nav");
+
+		window.addEventListener("scroll", () => {
+
+			if (lastScrollY < window.scrollY) {
+
+				topbar.classList.add("nav--hidden");
+
+				topbar.addEventListener("transitioned", () => {
+					document.body.removeChild(topbar);
+				})
+
+			} else {
+				topbar.classList.remove("nav--hidden");
+			}
+
+			lastScrollY = window.scrollY;
+		});
+	</script>
+
+</body>
+</html>
