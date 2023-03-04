@@ -1,67 +1,49 @@
 :root {
-	--serif-font: "EB Garamond", serif;
-	--sans-font: "Open Sans", sans-serif;
-	--main-font: "Poppins", sans-serif;
+	--serif: "EB Garamond", serif;
+	--sans: "Open Sans", sans-serif;
+	--font: "Poppins", sans-serif;
+
+	--bg: #efefef;
+	--bg0: #e5ded9;
+
+	--color: #4aa2d5;
+	--color0: #fea700;
 }
-
-/* open-sans-light */
-@font-face {
-	font-family: "Open Sans";
-	font-style: normal;
-	font-weight: 300;
-	src: local("Open Sans Light"), local("OpenSans-Light"), url(assets/fonts/open-sans/open-sans-light.woff2) format("woff2");
-}
-
-@import url("assets/fonts/eb-garamond/eb-garamond.css");
-@import url("assets/fonts/open-sans/open-sans.css");
-@import url("assets/fonts/poppins/poppins.css");
-
 body {
-	background: floralwhite;
+	background: var(--main-bg);
+	margin: 0;
 }
-
 /* pre-loader */
 .loader {
-	position: fixed;
-	z-index: 100;
-	right: 0;
-	left: 0;
-
-	display: flex;
-
-	width: 100vw;
-	height: 100vh;
-
-	transition: opacity .75s linear, visibility 2s linear;
-
-	background: floralwhite;
-
-	align-items: center;
+	position       : fixed;
+	z-index        : 100;
+	right          : 0;
+	left           : 0;
+	display        : flex;
+	width          : 100vw;
+	height         : 100vh;
+	transition     : opacity .75s linear, visibility 2s linear;
+	background     : var(--bg0);
+	align-items    : center;
 	justify-content: center;
 }
-
 .loader--hidden {
 	visibility: hidden;
-
-	opacity: 0;
+	opacity   : 0;
 }
-
 .loader::after {
-	width: 7rem;
-	height: 7rem;
-
-	content: "";
-	animation: loading 1.5s ease infinite;
-
-	border: .5rem solid #333;
-	border-top-color: floralwhite;
-	border-radius: 50%;
+	width           : 7rem;
+	height          : 7rem;
+	content         : "";
+	animation       : loading 1.5s ease infinite;
+	border          : .5rem solid var(--color);
+	border-top-color: var(--bg0);
+	border-radius   : 50%;
 }
-
 @keyframes loading {
 	0% {
-		transform: rotate(0deg);
-		padding: 0rem;
+		transform   : rotate(0deg);
+		padding     : 0rem;
 		border-width: 0.5rem;
 	}
 	20% {
@@ -69,23 +51,24 @@ body {
 	}
 	60% {
 		border-width: 0.2rem;
-		padding: 4rem;
+		padding     : 4rem;
 	}
 	100% {
-		transform: rotate(1turn);
-		padding: 0rem;
+		transform   : rotate(1turn);
+		padding     : 0rem;
 		border-width: 0.5rem;
 	}
 }
-
 /* navbar */
-.nav {
-	transition: visibility 3s, transform .5s;
+/*.nav
+{
 	width: 100vw;
-	border-bottom: solid grey 1px;
-	background: floralwhite;
+	border-bottom: solid var(--main-color) 1px;
+	background: var(--bg);
 	position: sticky;
 	margin-bottom: 5rem;
+
+	transition: visibility 3s, transform .5s;
 }
 
 .nav--hidden {
@@ -126,29 +109,101 @@ body {
 .list1:hover {
 	color: navy;
 }
-
-/* nav end */
+*//* nav end */
 
 /* header */
-header {
-	display: grid;
-	grid-template-rows: 700px;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 1rem;
-	grid-template-areas: "img text";
+@media screen and (min-width: 1440px)
+{
+	header
+	{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: center;
+		align-items: flex-start;
+		align-content: center;
+		gap: 10rem;
+		padding: 7rem;
+	}
+
+	.header_image
+	{
+		flex: 1 0 40vw;
+		min-width: 40rem;
+		border-radius: 40% 10%;
+	}
+
+	.header
+	{
+		flex: 1 1 auto;
+		margin-top: 3rem;
+		font-size: 3rem;
+		padding-right: 1rem;
+		border-right: solid var(--color) 2px;
+		text-align: right;
+		font-family: var(--sans);
+	}
 }
 
-.header_image {
-	/* min-width: 1000px; */
-	margin-left: 2rem;
-	height: 400px;
-	border-radius: 40% 10%;
-	grid-area: img;
+@media screen and (max-width: 1439px) and (min-width: 1130px)
+{
+	header
+	{
+		display: flex;
+		flex-flow: row nowrap;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+		gap: 5rem;
+		padding: 3rem;
+	}
+
+	.header_image
+	{
+		flex: 1 0 50vw;
+		min-width: 50vw;
+		border-radius: 30rem 5rem 5rem 30rem;
+	}
+
+	.header
+	{
+		flex: 1 1 auto;
+		font-size: 3rem;
+		padding-right: 1rem;
+		border-right: solid var(--color) 2px;
+		text-align: right;
+		font-family: var(--sans);
+	}
 }
 
-.header {
-	border-right: solid black 2px;
-	text-align: right;
-	grid-area: text;
-	font-family: "Open Sans", serif;
+@media screen and (max-width: 1129px)
+{
+	header {
+		display: flex;
+		align-items: center;
+		align-content: center;
+		justify-content: center;
+		width: 100vw;
+	}
+
+	.header_image {
+		pointer-events: none;
+		top: 0;
+		position: absolute;
+		width: 100vw;
+		min-height: 100%;
+		z-index: -1;
+		object-fit: cover;
+		/* border-radius: 0 0 40% 40% / 30%; */
+	}
+
+	.header {
+		align-self: center;
+		margin: 5rem;
+		padding: 5rem;
+		border-bottom: solid var(--color) 2px;
+		border-top: solid var(--color) 2px;
+		text-align: center;
+		font-family: var(--font);
+	}
+
 }
