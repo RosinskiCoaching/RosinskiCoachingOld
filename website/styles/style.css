@@ -370,6 +370,9 @@ body {
 
 @media screen and (max-width: 1129px)
 {
+	* {
+		background:  #0000 !important;
+	}
 
 	/* navbar */
 	.nav
@@ -381,16 +384,16 @@ body {
 		align-content: center;
 
 		border-bottom: solid var(--color) 1px;
-		background: var(--bg0);
 		position: fixed;
-		height: 40px;
+		height: 70px;
+		background:  #fff3 !important;
 
 		transition: visibility 2s, transform .5s;
 	}
 
 	.nav--hidden
 	{
-		transform: translateY(-40px);
+		transform: translateY(-70px);
 		visibility: hidden;
 	}
 
@@ -400,34 +403,31 @@ body {
 		align-content: center;
 		align-items: center;
 		justify-content: flex-start;
-		padding-left: 1rem;
+		padding-left: 5px;
 
 		text-transform: uppercase;
-		color: var(--color0);
 		font-family: var(--font);
-		background: var(--bg0);
+		text-align: left;
 	}
 
 	.link1
 	{
-		padding-left: 1rem;
+		padding: 0;
 		text-decoration: none;
 		transition: all 0.3s;
-		color: var(--color1);
-		background: var(--bg0);
+		color: #333;
 	}
 	.link1:hover
 	{
-		text-shadow: 2px 5px 2px #808080b3;
-		color: var(--color1);
+		text-shadow: 2px 5px 2px #888;
+		color: #333;
 	}
-
 	.logo
 	{
-		width: 3rem;
-		height: 3rem;
-		border-radius: 30%;
+		width: 0;
+		height: 0;
 		visibility: hidden;
+		z-index:  -10;
 	}
 
 	.nav-block2
@@ -435,48 +435,31 @@ body {
 		font-weight: bolder;
 		font-family: var(--serif);
 		font-size: 1.5rem;
-		color: var(--color);
+		color: #27c;
 		background: var(--bg0);
+		text-align: center;
 	}
 
 	.nav-block3
 	{
-		padding-right: 1rem;
-		background: var(--bg0);
+		padding-right: 10px;
+		text-align: right;
+		font-family: var(--font);
 	}
 
 	.list
 	{
+		display: flex;
+		flex-direction: column;
 		position: relative;
-		color: var(--color1);
+		color: #333;
 		transition: all 0.2s;
-		margin-right: 7px;
 		text-decoration: none;
-		background: var(--bg0);
 	}
 
 	.list:hover
 	{
-		color: var(--color1);
-	}
-
-	.list::before
-	{
-		content: "";
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 2px;
-		bottom: 0;
-		left: 0;
-		background-color: var(--color1);
-		transform: scaleX(0);
-		transition: transform 0.3s ease;
-	}
-
-	.list:hover::before
-	{
-		transform: scaleX(1);
+		color: NAVY;
 	}
 	/* nav end */
 
@@ -503,9 +486,12 @@ body {
 		align-self: center;
 		margin: 5rem;
 		padding: 5rem;
+		font-size: 1.5rem;
 		border-bottom: solid var(--color) 2px;
 		border-top: solid var(--color) 2px;
 		text-align: center;
-		font-family: var(--font);
+		font-family: var(--sans);
+		color: #fff;
+		text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 	}
 }
