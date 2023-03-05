@@ -5,12 +5,6 @@
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
 
-	<!--
-
-	The cursor credit goes to ClementGir on codepen—[here](https://codepen.io/clementGir/pen/RQqvQx). Thank you! :)
-
-	 -->
-
 	<title>Stefan Rosinski</title>
 
 	<!-- prefetch & load -->
@@ -56,12 +50,7 @@
 	<link rel="canonical" href="https://dev.rosinskicoaching.de/">
 	<link rel="me" href="mailto:stefan@rosinskicoaching.de">
 
-	<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script> -->
-
-</head>
-<body>
-
-	<!-- <script src="scripts/cursor.js"></script> -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 	<script>
 		window.addEventListener("load", () => {
@@ -75,22 +64,10 @@
 		})
 	</script>
 
-	<!-- <div class="cursor">
-		<div class="cursor__ball cursor__ball--big ">
-			<svg height="30" width="30">
-				<circle cx="15" cy="15" r="12" stroke-width="0"></circle>
-			</svg>
-		</div>
+</head>
+<body>
 
-		<div class="cursor__ball cursor__ball--small">
-			<svg height="10" width="10">
-				<circle cx="5" cy="5" r="4" stroke-width="0"></circle>
-			</svg>
-		</div>
-	</div>
- -->
-
-	<div id="cursor" class="circle"></div>
+	<div id="circle" class="circle"></div>
 
 	<!-- pre-loader -->
 	<div class="loader"></div>
@@ -141,15 +118,80 @@
 			lastScrollY = window.scrollY;
 		});
 	</script>
-
 	<script>
-		var circle = document.querySelector(".circle");
-		document.addEventListener("mousemove", (e) => {
-			let x = e.pageX + "px";
-			let y = e.pageY + "px";
-			circle.style.top = y;
-			circle.style.left = x;
-		})
+		// Credit goes to @weaknespase from stackoverflow.com
+
+		/**
+		 * legitemaly—I dont know
+		 *
+		 * @class      DelayLine if i had even the slightest clue
+		 * @param      {number}  delay   The delay
+		 * @param      {idk}  action  The action
+		 */
+		function DelayLine(delay, action){
+			capacity = Math.round(delay / 1000 * 200);
+			this.ring = new Array(capacity);
+			this.delay = delay;
+			this.action = action;
+			this._s = 0;
+			this._e = 0;
+			this._raf = null;
+			this._af = this._animationFrame.bind(this);
+			this._capacity = capacity;
+		}
+		/**
+		 * again—I dont have the faintest of ideas
+		 *
+		 * @param      {idk}  value   The value
+		 */
+		DelayLine.prototype.put = function(value){
+			this.ring[this._e++] = value;
+			if (this._e >= this._capacity) this._e = 0;
+			if (this._e == this._s) this._get();
+			cancelAnimationFrame(this._raf);
+			this._raf = requestAnimationFrame(this._af);
+		}
+		/**
+		 * For the last time—like hell I know
+		 *
+		 * @return     {<type>}  { description_of_the_return_value }
+		 */
+		DelayLine.prototype._get = function(){
+			var value = this.ring[this._s++];
+			if (this._s == this._capacity) this._s = 0;
+			return value;
+		}
+		/**
+		 * This is the last time I'm doing this.
+		 *
+		 * @return     {idk}  ooooohhh boy………
+		 */
+		DelayLine.prototype._peek = function(){
+			return this.ring[this._s];
+		}
+		DelayLine.prototype._animationFrame = function(){
+			if (this._length > 0){
+				if (performance.now() - this._peek().timeStamp > this.delay)
+					this.action(this._get());
+				this._raf = requestAnimationFrame(this._af);
+			}
+		}
+		Object.defineProperty(DelayLine.prototype, "_length", {
+			get: function() {
+				var size = this._e - this._s;
+				return size >= 0 ? size : size + this._capacity;
+			}
+		});
+
+		var pointer = document.getElementById("circle");
+		var delayLine = new DelayLine(100, function(e){
+			pointer.style.left = e.x + "px";
+			pointer.style.top = e.y + "px";
+		});
+
+		document.addEventListener("mousemove", function(e){
+			delayLine.put(e);
+		}, false);
 	</script>
 
 </body>

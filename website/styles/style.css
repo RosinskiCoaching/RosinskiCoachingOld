@@ -1,18 +1,18 @@
 :root {
-  --serif: "EB Garamond", serif;
-  --sans: "Open Sans", sans-serif;
-  --font: "Poppins", sans-serif;
+	--serif: "EB Garamond", serif;
+	--sans: "Open Sans", sans-serif;
+	--font: "Poppins", sans-serif;
 
-  --bg: #efefef;
-  --bg0: #f2efec;
+	--bg: #efefef;
+	--bg0: #f2efec;
 
-  --color: #4aa2d5;
-  --color0: #fea700;
-  --color1: #494f55;
+	--color: #4aa2d5;
+	--color0: #fea700;
+	--color1: #494f55;
 }
 body {
-  background: var(--main-bg);
-  margin: 0;
+	background: var(--main-bg);
+	margin    : 0;
 }
 
 *
@@ -20,111 +20,109 @@ body {
 	background: white;
 }
 
-.circle
-{
-	position: absolute;
-	left: 50%;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 75px;
-	height: 75px;
-	border-radius: 50%;
-	border: solid black 1px;
-	background: whitesmoke;
-	z-index: 100;
-	transition: all 0.3s;
-	box-sizing: border-box;
-	mix-blend-mode: difference;
-	box-shadow: 5px 5px 5px #696969b3;
-	animation: cursor 5s ease infinite;
-	pointer-events: all;
-}
-
 /* pre-loader */
 .loader {
-  position       : fixed;
-  z-index        : 100;
-  right          : 0;
-  left           : 0;
-  display        : flex;
-  width          : 100vw;
-  height         : 100vh;
-  transition     : opacity .75s linear, visibility 2s linear;
-  background     : var(--bg0);
-  align-items    : center;
-  justify-content: center;
+	position       : fixed;
+	z-index        : 100;
+	right          : 0;
+	left           : 0;
+	display        : flex;
+	width          : 100vw;
+	height         : 100vh;
+	transition     : opacity .75s linear, visibility 2s linear;
+	background     : var(--bg0);
+	align-items    : center;
+	justify-content: center;
 }
 .loader--hidden {
-  visibility: hidden;
-  opacity   : 0;
+	visibility: hidden;
+	opacity   : 0;
 }
 .loader::after {
-  width           : 7rem;
-  height          : 7rem;
-  content         : "";
-  animation       : loading 1.5s ease infinite;
-  border          : .5rem solid var(--color);
-  border-top-color: var(--bg0);
-  border-radius   : 50%;
+	width           : 7rem;
+	height          : 7rem;
+	content         : "";
+	animation       : loading 1.5s ease infinite;
+	border          : .5rem solid var(--color);
+	border-top-color: var(--bg0);
+	border-radius   : 50%;
 }
 @keyframes loading {
-  0% {
-  transform   : rotate(0deg);
-  padding     : 0rem;
-  border-width: 0.5rem;
-  }
-  20% {
-  transform: rotate(-45deg);
-  }
-  60% {
-  border-width: 0.2rem;
-  padding     : 4rem;
-  }
-  100% {
-  transform   : rotate(1turn);
-  padding     : 0rem;
-  border-width: 0.5rem;
-  }
+	0% {
+	transform   : rotate(0deg);
+	padding     : 0rem;
+	border-width: 0.5rem;
+	}
+	20% {
+	transform: rotate(-45deg);
+	}
+	60% {
+	border-width: 0.2rem;
+	padding     : 4rem;
+	}
+	100% {
+	transform   : rotate(1turn);
+	padding     : 0rem;
+	border-width: 0.5rem;
+	}
 }
 
 /* header */
 @media screen and (min-width: 1440px)
 {
+	/* cursor */
+	.circle
+	{
+		position : absolute;
+		top      : 50%;
+		left     : 50%;
+		transform: translate(-50%, -50%);
+		width    : 75px;
+		height   : 75px;
+		border-radius: 50%;
+		border    : solid black 1px;
+		background: #ffff;
+		mix-blend-mode: difference;
+		transition: all 0.3s;
+		box-sizing: border-box;
+		box-shadow: 5px 5px 5px #69696969; /* I swear this is a coincidence… the colors just work! */
+	}
+
 	/* navbar */
 	.nav
 	{
-		width: 100vw;
+		width  : 100vw;
 		display: flex;
 		justify-content: space-between;
-		align-items: center;
+		align-items  : center;
 		align-content: center;
 
 		border-bottom: solid var(--color) 1px;
-		background: var(--bg0);
-		position: fixed;
-		height: 80px;
+		background   : var(--bg0);
+		position     : fixed;
+		height       : 80px;
 
 		transition: visibility 3s, transform .5s;
 	}
 
 	.nav--hidden
 	{
-		transform: translateY(-80px);
+		transform : translateY(-80px);
 		visibility: hidden;
 	}
 
 	.nav-block1
 	{
-		display: inline-flex;
-		align-content: center;
-		align-items: center;
+		display        : inline-flex;
+		align-content  : center;
+		align-items    : center;
 		justify-content: flex-start;
-		padding-left: 1rem;
+		padding-left   : 1rem;
 
 		text-transform: uppercase;
-		color: var(--color0);
-		font-family: var(--font);
-		background: var(--bg0);
+		color         : var(--color0);
+		font-family   : var(--font);
+		background    : var(--bg0);
 	}
 
 	.link1
@@ -162,7 +160,6 @@ body {
 	{
 		padding-right: 1rem;
 		background: var(--bg0);
-		z-index: 999999999;
 	}
 
 	.list
@@ -173,7 +170,6 @@ body {
 		margin-right: 7px;
 		text-decoration: none;
 		background: var(--bg0);
-		z-index: 99999999999;
 	}
 
 	.list:hover
@@ -193,7 +189,6 @@ body {
 		background-color: var(--color1);
 		transform: scaleX(0);
 		transition: transform 0.3s ease;
-		z-index: 99999999;
 	}
 
 	.list:hover::before
@@ -268,6 +263,7 @@ body {
 		text-transform: uppercase;
 		color: var(--color0);
 		font-family: var(--font);
+		background: var(--bg0);
 	}
 
 	.link1
@@ -276,6 +272,7 @@ body {
 		text-decoration: none;
 		transition: all 0.3s;
 		color: var(--color1);
+		background: var(--bg0);
 	}
 	.link1:hover
 	{
@@ -297,11 +294,13 @@ body {
 		font-family: var(--serif);
 		font-size: 1.5rem;
 		color: var(--color);
+		background: var(--bg0);
 	}
 
 	.nav-block3
 	{
 		padding-right: 1rem;
+		background: var(--bg0);
 	}
 
 	.list
@@ -311,6 +310,7 @@ body {
 		transition: all 0.2s;
 		margin-right: 7px;
 		text-decoration: none;
+		background: var(--bg0);
 	}
 
 	.list:hover
@@ -370,6 +370,116 @@ body {
 
 @media screen and (max-width: 1129px)
 {
+
+	/* navbar */
+	.nav
+	{
+		width: 100vw;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		align-content: center;
+
+		border-bottom: solid var(--color) 1px;
+		background: var(--bg0);
+		position: fixed;
+		height: 40px;
+
+		transition: visibility 2s, transform .5s;
+	}
+
+	.nav--hidden
+	{
+		transform: translateY(-40px);
+		visibility: hidden;
+	}
+
+	.nav-block1
+	{
+		display: inline-flex;
+		align-content: center;
+		align-items: center;
+		justify-content: flex-start;
+		padding-left: 1rem;
+
+		text-transform: uppercase;
+		color: var(--color0);
+		font-family: var(--font);
+		background: var(--bg0);
+	}
+
+	.link1
+	{
+		padding-left: 1rem;
+		text-decoration: none;
+		transition: all 0.3s;
+		color: var(--color1);
+		background: var(--bg0);
+	}
+	.link1:hover
+	{
+		text-shadow: 2px 5px 2px #808080b3;
+		color: var(--color1);
+	}
+
+	.logo
+	{
+		width: 3rem;
+		height: 3rem;
+		border-radius: 30%;
+		visibility: hidden;
+	}
+
+	.nav-block2
+	{
+		font-weight: bolder;
+		font-family: var(--serif);
+		font-size: 1.5rem;
+		color: var(--color);
+		background: var(--bg0);
+	}
+
+	.nav-block3
+	{
+		padding-right: 1rem;
+		background: var(--bg0);
+	}
+
+	.list
+	{
+		position: relative;
+		color: var(--color1);
+		transition: all 0.2s;
+		margin-right: 7px;
+		text-decoration: none;
+		background: var(--bg0);
+	}
+
+	.list:hover
+	{
+		color: var(--color1);
+	}
+
+	.list::before
+	{
+		content: "";
+		position: absolute;
+		display: block;
+		width: 100%;
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: var(--color1);
+		transform: scaleX(0);
+		transition: transform 0.3s ease;
+	}
+
+	.list:hover::before
+	{
+		transform: scaleX(1);
+	}
+	/* nav end */
+
 	header {
 		display: flex;
 		align-items: center;
