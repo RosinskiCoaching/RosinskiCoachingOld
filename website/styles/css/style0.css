@@ -89,7 +89,7 @@ body {
 	}
 
 	/* navbar */
-	.nav
+	nav
 	{
 		width  : 100vw;
 		display: flex;
@@ -125,7 +125,7 @@ body {
 		background    : var(--bg0);
 	}
 
-	.link1
+	.home-link
 	{
 		padding-left: 1rem;
 		text-decoration: none;
@@ -133,7 +133,7 @@ body {
 		color: var(--color1);
 		background: var(--bg0);
 	}
-	.link1:hover
+	.home-link:hover
 	{
 		text-shadow: 2px 5px 2px #808080b3;
 		color: var(--color1);
@@ -230,7 +230,7 @@ body {
 @media screen and (max-width: 1439px) and (min-width: 1130px)
 {
 	/* navbar */
-	.nav
+	nav
 	{
 		width: 100vw;
 		display: flex;
@@ -266,7 +266,7 @@ body {
 		background: var(--bg0);
 	}
 
-	.link1
+	.home-link
 	{
 		padding-left: 1rem;
 		text-decoration: none;
@@ -274,7 +274,7 @@ body {
 		color: var(--color1);
 		background: var(--bg0);
 	}
-	.link1:hover
+	.home-link:hover
 	{
 		text-shadow: 2px 5px 2px #808080b3;
 		color: var(--color1);
@@ -375,7 +375,7 @@ body {
 	}
 
 	/* navbar */
-	.nav
+	nav
 	{
 		width: 100vw;
 		display: flex;
@@ -410,14 +410,14 @@ body {
 		text-align: left;
 	}
 
-	.link1
+	.home-link
 	{
 		padding: 0;
 		text-decoration: none;
 		transition: all 0.3s;
 		color: #333;
 	}
-	.link1:hover
+	.home-link:hover
 	{
 		text-shadow: 2px 5px 2px #888;
 		color: #333;

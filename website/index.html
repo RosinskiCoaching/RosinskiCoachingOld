@@ -22,7 +22,6 @@
 	<!-- Meta tags -->
 	<meta name="social" content="https://www.linkedin.com/in/stefan-rosinski-71ba97a3/">
 	<meta name="author" content="Stefan Rosinski, Laurens Rosinski">
-	<meta name="google" value="translate">
 	<meta name="application-name" content="Rosinski Coaching">
 	<meta name="description" content="Coaching für Menschen—Coaching für Kommunikation. Agiles Coaching für Business, Person, und Paar.">
 	<meta name="robots" content="index,follow,noodp">
@@ -45,9 +44,9 @@
 	<link rel="shortcut icon" href="assets/favicon/fav2.png" type="image/png">
 
 	<!-- links -->
-	<link rel="stylesheet" href="styles/style.css" type="text/css">
-	<link rel="stylesheet" href="styles/style2.css" type="text/css">
-	<link rel="canonical" href="https://dev.rosinskicoaching.de/">
+	<link rel="stylesheet" href="styles/css/style0.css" type="text/css">
+	<!-- <link rel="stylesheet" href="styles/css/style1.css" type="text/css"> -->
+	<link rel="canonical" href="https://www.rosinskicoaching.de/index.html">
 	<link rel="me" href="mailto:stefan@rosinskicoaching.de">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -73,39 +72,25 @@
 	<div class="loader"></div>
 
 	<!-- navbar -->
- 	<nav class="nav">
+ 	<nav>
 		<div class="nav-block1">
 			<img class="logo" src="assets/images/logo.png" alt="LOGO">
-			<a class="link1" href="https://www.rosinskicoaching.de/">Stefan Rosinski</a>
+			<a class="home-link" href="https://www.rosinskicoaching.de/">Stefan Rosinski</a>
 		</div>
 		<div class="nav-block2">
 			Coaching für Kommunikation
 		</div>
 		<div class="nav-block3">
 			<a href="contact.html" class="list">Kontakt</a>
-			<a href="workshops.html" class="list">Workshops</a>
+			<a href="workshops.html" class="list">Texte</a>
 			<a href="blog.html" class="list">Blog</a>
 		</div>
 	</nav>
 
 	<header>
-		<img class="header_image hover" src="assets/images/header.png" alt="there was a error with your connection. Please reload the page.">
-		<h1 class="header hover">Nicht du bist das Problem. Das Problem ist das Problem. Du bist die Lösung.</h1>
+		<img class="header_image" src="assets/images/header.png" alt="there was a error with your connection. Please reload the page.">
+		<h1 class="header">Nicht du bist das Problem. Das Problem ist das Problem. Du bist die Lösung.</h1>
 	</header>
-
-	<div class="outside">
-		<a href="coaching/Unternehme.html">
-			<h1>Coaching für Unternehme</h1>
-		</a>
-
-		<a href="coaching/Personen.html">
-			<h1>Coaching für Personen</h1>
-		</a>
-
-		<a href="coaching/Teams.html">
-			<h1>Coaching für Teams</h1>
-		</a>
-	</div>
 
 	<script>
 		let lastScrollY = window.scrollY;
@@ -131,13 +116,6 @@
 	<script>
 		// Credit goes to @weaknespase from stackoverflow.com
 
-		/**
-		 * legitemaly—I dont know
-		 *
-		 * @class      DelayLine if i had even the slightest clue
-		 * @param      {number}  delay   The delay
-		 * @param      {idk}  action  The action
-		 */
 		function DelayLine(delay, action){
 			capacity = Math.round(delay / 1000 * 200);
 			this.ring = new Array(capacity);
@@ -149,11 +127,6 @@
 			this._af = this._animationFrame.bind(this);
 			this._capacity = capacity;
 		}
-		/**
-		 * again—I dont have the faintest of ideas
-		 *
-		 * @param      {idk}  value   The value
-		 */
 		DelayLine.prototype.put = function(value){
 			this.ring[this._e++] = value;
 			if (this._e >= this._capacity) this._e = 0;
@@ -161,21 +134,11 @@
 			cancelAnimationFrame(this._raf);
 			this._raf = requestAnimationFrame(this._af);
 		}
-		/**
-		 * For the last time—like hell I know
-		 *
-		 * @return     {<type>}  { description_of_the_return_value }
-		 */
 		DelayLine.prototype._get = function(){
 			var value = this.ring[this._s++];
 			if (this._s == this._capacity) this._s = 0;
 			return value;
 		}
-		/**
-		 * This is the last time I'm doing this.
-		 *
-		 * @return     {idk}  ooooohhh boy………
-		 */
 		DelayLine.prototype._peek = function(){
 			return this.ring[this._s];
 		}
