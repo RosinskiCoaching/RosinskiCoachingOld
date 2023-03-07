@@ -11,7 +11,7 @@
 	--color1: #494f55;
 }
 body {
-	background: var(--main-bg);
+	background: var(bg);
 	margin    : 0;
 }
 

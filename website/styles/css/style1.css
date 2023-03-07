@@ -15,11 +15,16 @@
     border-width: 0.5rem;
   }
 }
+* {
+  background-color: white;
+}
+
 body {
   background: #efefef;
   margin: 0;
 }
-body .loader {
+
+.loader {
   position: fixed;
   z-index: 100;
   right: 0;
@@ -27,16 +32,12 @@ body .loader {
   display: flex;
   width: 100vw;
   height: 100vh;
-  transition: opacity 0.75s linear, visibility 2s linear;
+  transition: opacity 0.75s 0.75s linear, visibility 2s 0.75s linear;
   background: #f2efec;
   align-items: center;
   justify-content: unsafe center;
 }
-body .loader--hidden {
-  visibility: hidden;
-  opacity: 0;
-}
-body .loader::after {
+.loader::after {
   width: 7rem;
   height: 7rem;
   content: "";
@@ -45,7 +46,13 @@ body .loader::after {
   border-top-color: #f2efec;
   border-radius: 50%;
 }
-body .circle {
+
+.loader--hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.circle {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -60,10 +67,11 @@ body .circle {
   box-sizing: border-box;
   box-shadow: 5px 5px 5px rgba(128, 128, 128, 0.7019607843);
 }
-body nav {
+
+nav {
   width: 100vw;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   align-content: space-evenly;
@@ -73,7 +81,7 @@ body nav {
   height: 80px;
   transition: visibility 3s, transform 0.5s;
 }
-body nav .nav-block1 {
+nav .nav-block1 {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
@@ -82,23 +90,23 @@ body nav .nav-block1 {
   font-family: "Poppins", sans-serif;
   background-color: #f2efec;
 }
-body nav .nav-block1 .home-link {
+nav .nav-block1 .home-link {
   padding-left: 1rem;
   text-decoration: none;
   transition: all 0.3s;
   color: #494f55;
   background-color: #f2efec;
 }
-body nav .nav-block1 .home-link:hover {
+nav .nav-block1 .home-link:hover {
   text-shadow: 2px 5px 2px rgba(128, 128, 128, 0.7019607843);
   color: #494f55;
 }
-body nav .nav-block1 .logo {
+nav .nav-block1 .logo {
   width: 3rem;
   height: 3rem;
   border-radius: 30%;
 }
-body nav .nav-block2 {
+nav .nav-block2 {
   font-weight: bolder;
   font-family: "EB Garamond", serif;
   font-size: 1.5rem;
@@ -106,12 +114,12 @@ body nav .nav-block2 {
   background-color: #f2efec;
   text-align: center;
 }
-body nav .nav-block3 {
+nav .nav-block3 {
   padding-right: 1rem;
   background-color: #f2efec;
   font-family: "Poppins", sans-serif;
 }
-body nav .nav-block3 .list {
+nav .nav-block3 .list {
   position: relative;
   color: #494f55;
   transition: all 0.2s;
@@ -119,13 +127,13 @@ body nav .nav-block3 .list {
   text-decoration: none;
   background-color: #f2efec;
 }
-body nav .nav-block3 .list:hover {
+nav .nav-block3 .list:hover {
   color: #494f55;
 }
-body nav .nav-block3 .list:hover::before {
+nav .nav-block3 .list:hover::before {
   transform: scaleX(1);
 }
-body nav .nav-block3 .list::before {
+nav .nav-block3 .list::before {
   content: "";
   position: absolute;
   display: block;
@@ -137,16 +145,17 @@ body nav .nav-block3 .list::before {
   transform: scaleX(0);
   transition: all 0.3s;
 }
-body .nav--hidden {
+
+.nav--hidden {
   transform: translateY(-80px);
   visibility: hidden;
 }
-body header {
+
+header {
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
 }
-body header .header {
+header .header {
   flex: 1 1 auto;
   font-size: 3;
   padding-right: 1rem;
@@ -154,71 +163,75 @@ body header .header {
   text-align: right;
   font-family: "Open Sans", sans-serif;
 }
+
 @media screen and (min-width: 1440px) {
-  body header {
+  header {
     justify-content: center;
     gap: 10rem;
     padding: 7rem;
+    align-items: flex-start;
   }
-  body header .header_image {
+  header .header_image {
     flex: 1 0 40vw;
     min-width: 40rem;
     border-radius: 40% 10%;
   }
-  body header .header {
+  header .header {
     margin-top: 3rem;
   }
 }
 @media screen and (min-width: 1130px) and (max-width: 1439px) {
-  body header {
+  header {
     justify-content: space-between;
     gap: 5rem;
     padding: 3rem;
     padding-top: 10rem;
+    align-items: center;
   }
-  body header .header_image {
+  header .header_image {
     flex: 1 0 50vw;
     min-width: 50vw;
     border-radius: 30rem 5rem 5rem 30rem;
   }
 }
 @media screen and (max-width: 1129px) {
-  body nav {
+  nav {
     height: 70px !important;
     transition: visibility 2s, transform 0.5s !important;
     background-color: rgba(255, 255, 255, 0.2) !important;
   }
-  body nav .nav-block1 {
+  nav .nav-block1 {
     padding-left: 5px !important;
     text-align: left !important;
   }
-  body nav .nav-block1 .home-link {
+  nav .nav-block1 .home-link {
     padding: 0 !important;
   }
-  body nav .nav-block1 .logo {
+  nav .nav-block1 .logo {
     width: 0 !important;
     height: 0 !important;
     visibility: hidden !important;
     z-index: -10 !important;
   }
-  body nav .nav-block3 {
+  nav .nav-block3 {
     padding-right: 10px !important;
     text-align: right !important;
   }
-  body nav .nav-block3 .list {
+  nav .nav-block3 .list {
     display: flex !important;
     flex-direction: column !important;
   }
-  body nav .nav-block3 .list:hover {
+  nav .nav-block3 .list:hover {
     color: navy !important;
   }
-  body .nav--hidden {
+  .nav--hidden {
     transform: translateY(-70px) !important;
   }
-  body header {
+  header {
     width: 100vw !important;
+    align-items: center;
   }
-  body header .header_image {
+  header .header_image {
     pointer-events: none;
     top: 0;
     position: absolute;
@@ -227,7 +240,7 @@ body header .header {
     z-index: -1;
     object-fit: cover;
   }
-  body header .header {
+  header .header {
     align-self: center !important;
     margin: 5rem !important;
     padding: 5rem !important;
