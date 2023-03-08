@@ -11,19 +11,20 @@ $grey: #494f55
 $transparent: #808080b3
 $transparent-white: #fff3
 
-$breakpoint-big: 1440px
-$breakpoint-small: 1130px
+$breakpoint-lg: 1511px
+$breakpoint-md: 1439px
+$breakpoint-sm: 1130px
 
 =desktop
-	@media screen and (min-width: $breakpoint-big)
+	@media screen and (min-width: $breakpoint-lg)
 		@content
 
 =tablet
-	@media screen and (min-width: $breakpoint-small) and (max-width: $breakpoint-big - 1px)
+	@media screen and (min-width: $breakpoint-sm) and (max-width: $breakpoint-md)
 		@content
 
 =mobile
-	@media screen and (max-width: $breakpoint-small - 1px)
+	@media screen and (max-width: $breakpoint-sm - 1px)
 		@content
 
 @keyframes loading
@@ -40,7 +41,10 @@ $breakpoint-small: 1130px
 		border-width: .5rem
 
 *
-	background-color: white
+	+desktop
+		background-color: white
+	+tablet
+		background-color: white
 
 body
 	background: $bg
@@ -71,7 +75,6 @@ body
 	visibility: hidden
 	opacity: 0
 
-
 .circle
 	position: absolute
 	top: 50%
@@ -86,6 +89,8 @@ body
 	transition: all 0.3s
 	box-sizing: border-box
 	box-shadow: 5px 5px 5px $transparent
+	+mobile
+		visibility: hidden
 
 nav
 	width: 100vw
@@ -93,12 +98,16 @@ nav
 	flex-direction: row
 	justify-content: space-between
 	align-items: center
-	align-content: space-evenly
+	align-content: center
 	border-bottom: solid $blue 1px
 	background-color: $main-bg
 	position: fixed
 	height: 80px
 	transition: visibility 3s, transform .5s
+	+mobile
+		height: 70px
+		transition: visibility 2s, transform .5s
+		background-color: $transparent-white
 
 	.nav-block1
 		display: inline-flex
@@ -108,6 +117,10 @@ nav
 		text-transform: uppercase
 		font-family: $font
 		background-color: $main-bg
+		+mobile
+			padding-left: 5px
+			text-align: left
+			background-color: #0000
 
 		.home-link
 			padding-left: 1rem
@@ -115,6 +128,9 @@ nav
 			transition: all .3s
 			color: $grey
 			background-color: $main-bg
+			+mobile
+				padding-left: 5px
+				background-color: #0000
 			&:hover
 				text-shadow: 2px 5px 2px $transparent
 				color: $grey
@@ -123,6 +139,11 @@ nav
 			width: 3rem
 			height: 3rem
 			border-radius: 30%
+			+mobile
+				width: 0
+				height: 0
+				visibility: hidden
+				z-index: -10
 
 	.nav-block2
 		font-weight: bolder
@@ -131,11 +152,18 @@ nav
 		color: $blue
 		background-color: $main-bg
 		text-align: center
+		+mobile
+			background-color: #0000
+			color: #246f9b
 
 	.nav-block3
 		padding-right: 1rem
 		background-color: $main-bg
 		font-family: $font
+		+mobile
+			padding-right: 10px
+			text-align: right
+			background-color: #0000
 
 		.list
 			position: relative
@@ -144,10 +172,10 @@ nav
 			margin-right: 7px
 			text-decoration: none
 			background-color: $main-bg
-			&:hover
-				color: $grey
-				&::before
-					transform: scaleX(1)
+			+mobile
+				display: flex
+				flex-direction: column
+				background-color: #0000
 			&::before
 				content: ""
 				position: absolute
@@ -159,14 +187,56 @@ nav
 				background-color: $grey
 				transform: scaleX(0)
 				transition: all .3s
+			&:hover
+				color: $grey
+				+mobile
+					color: navy
+				&::before
+					transform: scaleX(1)
 
 .nav--hidden
 	transform: translateY(-80px)
 	visibility: hidden
+	+mobile
+		transform: translateY(-70px)
 
 header
 	display: flex
 	flex-flow: row nowrap
+	justify-content: center
+	align-items: flex-start
+	gap: 10rem
+	padding: 7rem
+	+desktop
+		padding-top: 12vh
+	+tablet
+		justify-content: space-between
+		gap: 5rem
+		padding: 3rem
+		padding-top: 10rem
+	+mobile
+		width: 100vw
+		padding: 0
+		flex-flow: column wrap
+		gap: 0
+
+	.header_image
+		flex: 1 0 40vw
+		min-width: 40vw
+		border-radius: 40% 10%
+		+tablet
+			flex: 1 0 50vw
+			min-width: 50vw
+			border-radius: 30rem 5rem 5rem 30rem
+		+mobile
+			pointer-events: none
+			top: 0
+			position: absolute
+			width: 100vw
+			min-height: 100%
+			z-index: -1
+			object-fit: cover
+			border-radius: 0
 
 	.header
 		flex: 1 1 auto
@@ -175,88 +245,21 @@ header
 		border-right: solid $blue 2px
 		text-align: right
 		font-family: $sans
-
-+desktop
-	header
-		justify-content: center
-		gap: 10rem
-		padding: 7rem
-		align-items: flex-start
-
-		.header_image
-			flex: 1 0 40vw
-			min-width: 40rem
-			border-radius: 40% 10%
-
-		.header
+		+desktop
 			margin-top: 3rem
-
-+tablet
-	header
-		justify-content: space-between
-		gap: 5rem
-		padding: 3rem
-		padding-top: 10rem
-		align-items: center
-
-		.header_image
-			flex: 1 0 50vw
-			min-width: 50vw
-			border-radius: 30rem 5rem 5rem 30rem
-
-+mobile
-	nav
-		height: 70px !important
-		transition: visibility 2s, transform .5s !important
-		background-color: $transparent-white !important
-
-		.nav-block1
-			padding-left: 5px !important
-			text-align: left !important
-
-			.home-link
-				padding: 0 !important
-
-			.logo
-				width: 0 !important
-				height: 0 !important
-				visibility: hidden !important
-				z-index: -10 !important
-
-		.nav-block3
-			padding-right: 10px !important
-			text-align: right !important
-
-			.list
-				display: flex !important
-				flex-direction: column !important
-				&:hover
-					color: navy !important
-
-	.nav--hidden
-		transform: translateY(-70px) !important
-
-	header
-		width: 100vw !important
-		align-items: center
-
-		.header_image
-			pointer-events: none
-			top: 0
-			position: absolute
-			width: 100vw
-			min-height: 100%
-			z-index: -1
-			object-fit: cover
-
-		.header
-			align-self: center !important
-			margin: 5rem !important
-			padding: 5rem !important
-			font-size: 1.5rem !important
-			border-bottom: solid $blue 2px !important
-			border-top: solid $blue 2px !important
-			text-align: center !important
-			border-right: none !important
-			color: white !important
-			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black !important
+		+tablet
+			align-self: center
+			margin-top: 0
+		+mobile
+			align-self: center
+			margin: 5rem
+			margin-top: 20vh
+			padding: 5rem
+			padding-right: 0
+			font-size: 1.5rem
+			border-right: none
+			border-top: solid $blue 2px
+			border-bottom: solid $blue 2px
+			text-align: center
+			color: white
+			text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black
