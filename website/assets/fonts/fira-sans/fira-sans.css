@@ -1,0 +1,8 @@
+/* fira-sans-regular */
+@font-face {
+	font-family: "Fira Sans";
+	font-style: normal;
+	font-weight: 400;
+	src: local("Fira Sans Regular"), local("FiraSans-Regular"), url(fira-sans-regular.woff2) format("woff2");
+}
+
