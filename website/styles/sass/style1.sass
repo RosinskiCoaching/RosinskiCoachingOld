@@ -238,7 +238,7 @@ header
 			min-height: 100%
 			z-index: -1
 			object-fit: cover
-			border-radius: 0
+			border-radius: 0 0 90% 90% / 20%
 
 	.header
 		flex: 1 1 auto
@@ -256,8 +256,9 @@ header
 			align-self: center
 			margin: 5rem
 			margin-top: 20vh
-			padding: 5rem
 			padding-right: 0
+			padding-top: 5rem
+			padding-bottom: 5rem
 			font-size: 1.5rem
 			border-right: none
 			border-top: solid $blue 2px
@@ -277,11 +278,20 @@ main
 	grid-template-rows: 1fr
 	grid-template-columns: 1fr 1fr 1fr
 	grid-template-areas: "art1 art2 art3"
-	justify-items: space-evenly
-	justify-content: space-evenly
+	justify-items: space-between
+	justify-content: space-between
 	align-items: stretch
-	align-content: space-evenly
+	align-content: space-between
 	font-family: $font
+	+mobile
+		align-items: start
+		align-content: start
+		justify-items: center
+		justify-content: center
+		grid-template-rows: 1fr 1fr 1fr
+		margin-top: 10vh
+		grid-template-columns: 1fr
+		grid-template-areas: "art1" "art2" "art3"
 
 	article
 		padding: 2rem
