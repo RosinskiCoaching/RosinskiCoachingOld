@@ -313,6 +313,7 @@ main
 				background-color: $grey
 				border-radius: 5px
 				padding: 10px
+				transform: translateY(-3px)
 
 		.head2
 			background-color: $main-bg

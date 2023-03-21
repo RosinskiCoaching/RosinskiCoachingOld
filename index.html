@@ -44,11 +44,18 @@
 		}
 
 		h1 {
-			color: skyblue;
+			color: #5bbce4;
 			font-family: "Poppins", sans-serif;
 			font-size: 4rem;
 			margin-bottom: 5rem;
 			transform: translateY(-5vh);
+			text-shadow: -10px -10px 10px grey;
+			transition: .5s;
+		}
+
+		h1:hover {
+			text-shadow: 10px 10px 10px #3fb1df;
+			color: #303030;
 		}
 
 		.link {
@@ -65,8 +72,7 @@
 		}
 
 		.link:hover {
-			margin-top: -4px;
-			margin-bottom: 4px;
+			transform: translateY(-5px);
 			box-shadow: 2px 5px 5px #808080b3;
 		}
 
